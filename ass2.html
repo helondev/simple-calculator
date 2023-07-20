@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-one">
+        <div class="container rounded-3">
+            <h1 class="text-center text-light mt-4">PROGRAM</h1>
+
+            <p class="text-center text-secondary">kindly enter a number below</p>
+      
+            <div class="input-div text-center m-3 ">
+                <input class="num1 p-1 rounded-pill text-center" type="number" id="num1" placeholder="Enter a number">
+            </div>
+            <div class="input-div text-center m-3">
+                <input class="num2 p-1 rounded-pill text-center" type="number" id="num2" placeholder="Enter a number">
+            </div>
+
+            <p class="text-center text-secondary">Click The Arithmetic Operation You Would Like To Perform</p>
+      
+            <div class="text-center">
+                <button class="button p-2 m-1 rounded-pill text-light" onclick="calculate('addition')">Addition</button>
+                <button class="button p-2 m-1 rounded-pill text-light" onclick="calculate('multiplication')">Multiplication</button>
+                <button class="button  p-2 m-1 rounded-pill text-light" onclick="calculate('division')">Division</button>
+                <button class="button  p-2 m-1 rounded-pill text-light" onclick="calculate('subtraction')">Subtraction</button>
+            </div>
+
+            
+      
+           <div class="text-center text-light">
+            <h2 >Result:</h2>
+            <div id="result"></div>
+           </div>
+           <script>
+            function calculate(operation) {
+
+              let num1 = parseInt(document.getElementById('num1').value);
+              let num2 = parseInt(document.getElementById('num2').value);
+              
+              let result;
+
+              if (operation === 'addition') {
+                result = num1 + num2;
+              } else if (operation === 'multiplication') {
+                result = num1 * num2;
+              } else if (operation === 'division') {
+                result = num1 / num2;
+              } else if (operation === 'subtraction') {
+                result = num1 - num2;
+              }
+              
+              document.getElementById('result').textContent = result;
+            }
+            </script>
+        </div>
+    </div>
+    
+</body>
+</html>
